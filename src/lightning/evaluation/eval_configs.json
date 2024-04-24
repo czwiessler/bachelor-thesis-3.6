@@ -1,0 +1,63 @@
+[
+    {
+        "model_name": "coatnet_0_rw_224.sw_in1k",
+        "num_classes": 8,
+        "checkpoint_path": "../../../models/checkpoints/51_classes/coatmodel-epoch=8-val_loss=0.01467.ckpt",
+        "image_size": 224
+    },
+    {
+        "model_name": "coatnet_rmlp_2_rw_224",
+        "num_classes": 8,
+        "checkpoint_path": "../../../models/checkpoints/???",
+        "image_size": 224
+    },
+    {
+        "model_name": "resnet18",
+        "num_classes": 8,
+        "checkpoint_path": "../../../models/checkpoints/51_classes/res18model-epoch=7-val_loss=2.88822.ckpt",
+        "image_size": 224
+    },
+    {
+        "model_name": "google/vit-base-patch16-224",
+        "num_classes": 8,
+        "checkpoint_path": "../../../models/checkpoints/51_classes/vitgoogle-epoch=2-val_loss=1.88848.ckpt",
+        "image_size": 224
+    },
+    {
+        "model_name": "google/vit-base-patch32-384",
+        "num_classes": 8,
+        "checkpoint_path": "../../../models/checkpoints/51_classes/vitgooglelatest-epoch=6-val_loss=1.29362.ckpt",
+        "image_size": 384
+    },
+    {
+        "model_name": "timm/maxvit_xlarge_tf_512.in21k_ft_in1k",
+        "num_classes": 8,
+        "checkpoint_path": "../../../models/checkpoints/???",
+        "image_size": 512
+    },
+    {
+        "model_name": "timm/maxvit_xlarge_tf_384.in21k_ft_in1k",
+        "num_classes": 8,
+        "checkpoint_path": "../../../models/checkpoints/???",
+        "image_size": 384
+    },
+    {
+
+        "model_name": "timm/maxvit_base_tf_384.in21k_ft_in1k",
+        "num_classes": 8,
+        "checkpoint_path": "../../../models/checkpoints/???",
+        "image_size": 384
+    },
+    {
+        "model_name": "timm/davit_base.msft_in1k",
+        "num_classes": 8,
+        "checkpoint_path": "../../../models/checkpoints/davitBase-epoch=0-val_loss=0.09534.ckpt",
+        "image_size": 224
+    },
+    {
+        "model_name": "microsoft/swinv2-base-patch4-window12-192-22k",
+        "num_classes": 8,
+        "checkpoint_path": "../../../models/checkpoints/???",
+        "image_size": 192
+    }
+]

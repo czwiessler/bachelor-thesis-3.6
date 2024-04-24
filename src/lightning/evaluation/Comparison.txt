@@ -1,0 +1,53 @@
+C:\Users\christian.zwiessler\PycharmProjects\bachelor-thesis\.venv311\Scripts\python.exe C:\Users\christian.zwiessler\PycharmProjects\bachelor-thesis\src\lightning\evaluation\evaluate.py 
+| Image                                    | Result          | Class-ID   | Top-k IDs                                | Time (seconds)  |
+----------------------------------------------------------------------------------------------------------------------------------------
+| Beermug_0_Beermug002.png                 | correct         | 0          | 0 (98.84%), 37 (0.23%), 2 (0.11%)        | 0.40640         |
+| Beermug_0_Beermug034.png                 | correct         | 0          | 0 (99.01%), 37 (0.14%), 15 (0.08%)       | 0.42951         |
+| Beermug_1_Beermug045.png                 | correct         | 1          | 1 (96.75%), 10 (0.24%), 25 (0.23%)       | 0.22423         |
+| Beermug_1_Beermug047.png                 | correct         | 1          | 1 (95.34%), 25 (0.46%), 10 (0.39%)       | 0.45492         |
+| Beermug_1_Beermug053.png                 | correct         | 1          | 1 (91.44%), 25 (0.99%), 10 (0.70%)       | 0.45135         |
+| Beermug_2_Beermug063.png                 | correct         | 2          | 2 (96.61%), 1 (0.41%), 0 (0.38%)         | 0.44994         |
+| Waterglass_00_Waterglass005.png          | correct         | 3          | 3 (94.07%), 5 (0.58%), 1 (0.37%)         | 0.46452         |
+| Waterglass_01_Waterglass018.png          | correct         | 4          | 4 (92.28%), 11 (0.71%), 10 (0.57%)       | 0.50816         |
+| Waterglass_01_Waterglass019.png          | correct         | 4          | 4 (93.20%), 11 (0.64%), 10 (0.43%)       | 0.47179         |
+| Waterglass_01_Waterglass024.png          | correct         | 4          | 4 (78.68%), 11 (5.25%), 9 (1.07%)        | 0.51964         |
+| Waterglass_03_Waterglass036.png          | correct         | 6          | 6 (90.23%), 8 (1.30%), 10 (0.62%)        | 0.69440         |
+| Waterglass_04_Waterglass045.png          | correct         | 7          | 7 (95.79%), 37 (0.60%), 22 (0.22%)       | 0.53407         |
+| Waterglass_04_Waterglass047.png          | correct         | 7          | 7 (83.09%), 25 (1.74%), 22 (1.50%)       | 0.34002         |
+| Waterglass_06_Waterglass060.png          | correct         | 9          | 9 (85.41%), 11 (2.46%), 25 (1.53%)       | 0.28914         |
+| Waterglass_10_Waterglass091.png          | correct         | 13         | 13 (79.96%), 12 (3.08%), 14 (1.95%)      | 0.45779         |
+| Waterglass_10_Waterglass093.png          | correct         | 13         | 13 (43.28%), 14 (25.15%), 20 (4.34%)     | 0.33748         |
+| Waterglass_11_Waterglass096.png          | correct         | 14         | 14 (89.05%), 15 (1.30%), 37 (1.12%)      | 0.31068         |
+| Waterglass_11_Waterglass100.png          | correct         | 14         | 14 (91.28%), 13 (1.04%), 15 (0.66%)      | 0.44787         |
+| Waterglass_11_Waterglass101.png          | correct         | 14         | 14 (87.54%), 13 (1.76%), 12 (1.05%)      | 0.53667         |
+| Waterglass_11_Waterglass135.png          | not correct     | 14         | 30 (32.98%), 15 (22.01%), 29 (3.75%)     | 0.39114         |
+| Waterglass_15_Waterglass119.png          | correct         | 18         | 18 (72.80%), 12 (6.08%), 21 (2.87%)      | 0.32228         |
+| Waterglass_16_Waterglass123.png          | not correct     | 19         | 21 (32.18%), 14 (13.72%), 13 (9.47%)     | 0.57753         |
+| Waterglass_20_Waterglass152.png          | correct         | 23         | 23 (90.57%), 34 (1.07%), 24 (0.77%)      | 0.53101         |
+| Waterglass_21_Waterglass156.png          | correct         | 24         | 24 (87.63%), 22 (3.71%), 7 (0.87%)       | 0.46074         |
+| Waterglass_22_Waterglass163.png          | correct         | 25         | 25 (60.80%), 11 (13.35%), 1 (4.68%)      | 0.65419         |
+| Waterglass_25_Waterglass182.png          | correct         | 28         | 28 (49.10%), 26 (31.25%), 27 (3.88%)     | 0.63690         |
+| Waterglass_25_Waterglass185.png          | correct         | 28         | 28 (88.88%), 26 (2.81%), 35 (0.58%)      | 0.65100         |
+| Waterglass_25_Waterglass186.png          | correct         | 28         | 28 (77.61%), 26 (9.87%), 36 (1.14%)      | 0.52808         |
+| Waterglass_26_Waterglass194.png          | correct         | 29         | 29 (91.87%), 15 (1.53%), 14 (0.81%)      | 0.51560         |
+| Waterglass_26_Waterglass196.png          | correct         | 29         | 29 (84.29%), 44 (1.32%), 26 (1.20%)      | 0.49046         |
+| Waterglass_26_Waterglass205.png          | correct         | 29         | 29 (71.17%), 13 (4.34%), 14 (2.22%)      | 0.41208         |
+| Waterglass_28_Waterglass213.png          | correct         | 31         | 31 (92.89%), 32 (1.25%), 24 (0.87%)      | 0.23877         |
+| Waterglass_29_Waterglass219.png          | correct         | 32         | 32 (93.20%), 31 (0.79%), 33 (0.66%)      | 0.35747         |
+| Waterglass_29_Waterglass222.png          | correct         | 32         | 32 (57.27%), 31 (24.46%), 33 (2.51%)     | 0.42965         |
+| Waterglass_29_Waterglass224.png          | correct         | 32         | 32 (91.67%), 31 (1.53%), 33 (0.70%)      | 0.33038         |
+| Waterglass_33_Waterglass255.png          | correct         | 36         | 36 (88.90%), 44 (1.45%), 35 (0.98%)      | 0.27651         |
+| Waterglass_33_Waterglass259.png          | correct         | 36         | 36 (86.02%), 35 (1.10%), 44 (1.08%)      | 0.42521         |
+| Whitebeerglass_1_Whitebeerglass010.png   | correct         | 41         | 41 (71.31%), 8 (7.04%), 40 (4.08%)       | 0.45601         |
+| Whitebeerglass_2_Whitebeerglass014.png   | correct         | 42         | 42 (54.10%), 41 (8.16%), 40 (5.86%)      | 0.38827         |
+| Whitebeerglass_2_Whitebeerglass019.png   | correct         | 42         | 42 (55.64%), 41 (8.32%), 43 (6.42%)      | 0.47600         |
+| Whitebeerglass_3_Whitebeerglass025.png   | correct         | 43         | 43 (70.81%), 40 (10.41%), 42 (2.38%)     | 0.50577         |
+| Whitebeerglass_4_Whitebeerglass027.png   | correct         | 44         | 44 (82.87%), 15 (1.27%), 27 (1.04%)      | 0.50001         |
+| Wineglass_0_Wineglass006.png             | not correct     | 45         | 48 (89.85%), 45 (3.48%), 47 (0.82%)      | 0.47671         |
+| Wineglass_5_Wineglass051.png             | correct         | 50         | 50 (86.41%), 49 (1.76%), 47 (1.47%)      | 0.48929         |
+----------------------------------------------------------------------------------------------------------------------------------------
+Average prediction time per image: 0.45113 seconds
+Average Top-1 confidence: 80.51%
+Accuracy: 41/44 correct (93.18%)
+
+Process finished with exit code 0

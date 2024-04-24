@@ -1,0 +1,3 @@
+model_name: timm/davit_base.msft_in1k
+num_classes: 2
+learning_rate: 0.0002089296130854041

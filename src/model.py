@@ -1,15 +1,25 @@
+import os
+
 import timm
 import torch
+from transformers import AutoModel, AutoConfig
+
 
 def init_model(model_name, num_classes):
 
-    if model_name == 'coatnet_0_rw_224.sw_in1k':
+    if model_name == 'coat_tiny':
         model = timm.create_model(model_name, pretrained=True)
-        num_features = model.head.fc.in_features
+        num_features = model.head.in_features
         model.head.fc = torch.nn.Linear(num_features, num_classes)
 
     elif model_name == 'coatnet_rmlp_2_rw_224':
-        model = timm.create_model(model_name, pretrained=True)
+        # printe den aktuellen pfad
+        #print(os.path.dirname(os.path.abspath(__file__)))
+        model_path = "C:/Users/christian.zwiessler/PycharmProjects/timmpy36/src/lightning/model_architectures/coat_model"
+        config = AutoConfig.from_pretrained(model_path)
+        model = AutoModel.from_config(config)
+
+        #model = timm.create_model(model_name, pretrained=False)
         num_features = model.head.fc.in_features
         model.head.fc = torch.nn.Linear(num_features, num_classes)
 
@@ -35,7 +45,9 @@ def init_model(model_name, num_classes):
         model.head.fc = torch.nn.Linear(num_features, num_classes)
 
     elif model_name == 'timm/davit_base.msft_in1k':
-        model = timm.create_model(model_name, pretrained=True)
+        model = timm.create_model(model_name, pretrained=False)
+        data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lightning', 'model_architectures')
+        model.load_state_dict(torch.load(data_path + '/model_davit_base_weights.bin'))
         num_features = model.head.fc.in_features
         model.head.fc = torch.nn.Linear(num_features, num_classes)
 

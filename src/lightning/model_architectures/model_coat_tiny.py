@@ -5,7 +5,7 @@ from src.data_preprocessing import create_data_loader
 from src.model import init_model
 
 class CoatTimmModel(pl.LightningModule):
-    def __init__(self, model_name='coatnet_0_rw_224.sw_in1k', num_classes=8, learning_rate=3.9810717055349735e-05):
+    def __init__(self, model_name='coat_tiny', num_classes=8, learning_rate=3.9810717055349735e-05):
         super().__init__()
         self.model = init_model(model_name, num_classes)
         self.learning_rate = learning_rate

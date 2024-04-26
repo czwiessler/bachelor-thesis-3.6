@@ -1,6 +1,6 @@
 import pytorch_lightning as pl
 from pytorch_lightning.tuner import Tuner
-from src.lightning.model_architectures.model_coat import CoatTimmModel
+from src.lightning.model_architectures.model_coat_tiny import CoatTimmModel
 from src.lightning.model_architectures.model_resnet18 import ResnetTimmModel
 def init_trainer(model, use_lr_finder):
     # After defining this class, you can instantiate it and use it with a PyTorch Lightning Trainer as shown before.

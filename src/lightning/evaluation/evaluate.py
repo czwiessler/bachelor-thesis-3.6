@@ -13,7 +13,7 @@ model_name = 'coat_tiny'
 # choose from the following models:
 # coat_tiny
 # swin_base_patch4_window12_384
-
+# coatnet_0_rw_224
 
 class CustomModel(LightningModule):
     def __init__(self, model_name, num_classes=8, checkpoint_path=None, image_size=224):
@@ -111,7 +111,7 @@ def print_prediction(image_name, is_correct, class_name, top_k_ids, top_k_probs,
 
 
 def main(model_name):
-    with open('eval_configs.json', 'r') as config_file:
+    with open('../model_architectures/model_configs.json', 'r') as config_file:
         configs = json.load(config_file)
     selected_config = next((config for config in configs if config['model_name'] == model_name), None)
     if selected_config:

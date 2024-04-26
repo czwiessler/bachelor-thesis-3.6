@@ -8,7 +8,7 @@
 
 2. Init Evaluation:
    - Add the model to evaluate.py
-   - Add the model to the eval_configs.json
+   - Add the model to the model_configs.json
 
 3. Training Bevahior:
   - Set use_lr_finder to True in the train.py in order to find the best learning rate for fine-tuning

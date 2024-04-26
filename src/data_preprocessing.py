@@ -114,7 +114,7 @@ def create_data_loader(model_name):
 
     # Step 1: Prepare the data
     # Pfad zur Konfigurationsdatei
-    config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'src/lightning/evaluation/eval_configs.json')
+    config_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'src/lightning/model_architectures/model_configs.json')
 
     # Lade Konfigurationsdaten
     with open(config_path, 'r') as file:
@@ -125,7 +125,7 @@ def create_data_loader(model_name):
 
     # Überprüfe, ob eine Konfiguration gefunden wurde
     if model_config is None:
-        raise ValueError(f"Model {model_name} not supported.")
+        raise ValueError(f"CZ: Model {model_name} not supported.")
 
     image_format, ratio = get_input_format(data_path)
     size = model_config['image_size']  # Größe aus der Konfiguration extrahieren

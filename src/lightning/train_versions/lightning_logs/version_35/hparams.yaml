@@ -1,3 +1,0 @@
-model_name: timm/coatnet_rmlp_2_rw_384.sw_in12k_ft_in1k
-num_classes: 51
-learning_rate: 3.9810717055349735e-05

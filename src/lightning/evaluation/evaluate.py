@@ -8,19 +8,11 @@ import os
 import src.model as model
 from src.data_preprocessing import get_input_format
 
-model_name = 'timm/davit_base.msft_in1k'
+model_name = 'coat_tiny'
 
 # choose from the following models:
-# coatnet_0_rw_224.sw_in1k
-# resnet18
-# google/vit-base-patch16-224
-# google/vit-base-patch32-384
-# timm/maxvit_xlarge_tf_512.in21k_ft_in1k
-# timm/maxvit_xlarge_tf_384.in21k_ft_in1k
-# timm/maxvit_base_tf_384.in21k_ft_in1k
-# timm/coatnet_rmlp_2_rw_384.sw_in12k_ft_in1k
-# timm/davit_base.msft_in1k
-# microsoft/swinv2-base-patch4-window12-192-22k
+# coat_tiny
+# swin_base_patch4_window12_384
 
 
 class CustomModel(LightningModule):

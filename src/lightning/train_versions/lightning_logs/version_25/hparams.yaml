@@ -1,3 +1,0 @@
-model_name: google/vit-base-patch16-224
-num_classes: 51
-learning_rate: 0.000363078054770101

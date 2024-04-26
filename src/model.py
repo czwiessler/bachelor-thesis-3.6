@@ -12,6 +12,10 @@ def init_model(model_name, num_classes):
         num_features = model.head.in_features
         model.head.fc = torch.nn.Linear(num_features, num_classes)
 
+    if model_name == 'coatnet_0_rw_224':
+        model = timm.create_model(model_name, pretrained=True)
+        num_features = model.head.fc.in_features
+        model.head.fc = torch.nn.Linear(num_features, num_classes)
 
     elif model_name == 'swin_base_patch4_window12_384':
         model = timm.create_model(model_name, pretrained=False)

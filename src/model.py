@@ -1,8 +1,6 @@
 import os
-
 import timm
 import torch
-from transformers import AutoModel, AutoConfig
 
 
 def init_model(model_name, num_classes):
@@ -29,6 +27,11 @@ def init_model(model_name, num_classes):
         checkpoint = torch.load(weights_path, map_location=torch.device('cpu'))
         model.load_state_dict(checkpoint['model'])
         num_features = model.head.in_features
+        model.head.fc = torch.nn.Linear(num_features, num_classes)
+
+    elif model_name == 'maxvit_base_224':
+        model = timm.create_model(model_name, pretrained=True)
+        num_features = model.head.fc.in_features
         model.head.fc = torch.nn.Linear(num_features, num_classes)
 
     else:

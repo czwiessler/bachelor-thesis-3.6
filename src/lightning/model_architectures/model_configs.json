@@ -22,5 +22,11 @@
         "num_classes": 8,
         "checkpoint_path": "../../../models/checkpoints/???",
         "image_size": 224
+    },
+    {
+        "model_name": "vit_base_patch16_224",
+        "num_classes": 8,
+        "checkpoint_path": "../../../models/checkpoints/51_classes/vitgoogle-epoch=2-val_loss=1.88848.ckpt",
+        "image_size": 224
     }
 ]

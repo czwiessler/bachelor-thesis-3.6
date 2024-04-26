@@ -12,17 +12,12 @@ def init_model(model_name, num_classes):
         num_features = model.head.in_features
         model.head.fc = torch.nn.Linear(num_features, num_classes)
 
-    elif model_name == 'coatnet_rmlp_2_rw_224':
-        # printe den aktuellen pfad
-        #print(os.path.dirname(os.path.abspath(__file__)))
-        model_path = "C:/Users/christian.zwiessler/PycharmProjects/timmpy36/src/lightning/model_architectures/coat_model"
-        config = AutoConfig.from_pretrained(model_path)
-        model = AutoModel.from_config(config)
-        num_features = model.head.fc.in_features
-        model.head.fc = torch.nn.Linear(num_features, num_classes)
 
     elif model_name == 'swin_base_patch4_window12_384':
-        model = timm.create_model(model_name)
+        model = timm.create_model(model_name, pretrained=False)
+        weights_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src/lightning/model_architectures/swin_base_patch4_window12_384_22kto1k.pth')
+        checkpoint = torch.load(weights_path, map_location=torch.device('cpu'))
+        model.load_state_dict(checkpoint['model'])
         num_features = model.head.in_features
         model.head.fc = torch.nn.Linear(num_features, num_classes)
 

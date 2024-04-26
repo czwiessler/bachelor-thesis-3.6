@@ -1,22 +1,11 @@
-from urllib.request import urlopen
+import zipfile
 
-import torch
-from PIL import Image
-import timm
+# Path to the downloaded .pth file that may actually be a ZIP file
+zip_path = 'C:/Users/christian.zwiessler/.cache/torch/hub/checkpoints/swin_base_patch4_window12_384_22kto1k.pth'
 
-img = Image.open(urlopen(
-    'https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/beignets-task-guide.png'
-))
-
-model = timm.create_model('timm/coatnet_0_rw_224.sw_in1k', pretrained=True)
-model = model.eval()
-
-# get custom_model specific transforms (normalization, resize)
-data_config = timm.data.resolve_model_data_config(model)
-transforms = timm.data.create_transform(**data_config, is_training=False)
-output = model(transforms(img).unsqueeze(0))  # unsqueeze single image into batch of 1
-
-top5_probabilities, top5_class_indices = torch.topk(output.softmax(dim=1) * 100, k=5)
-
-print(top5_probabilities)
-print(top5_class_indices)
+# Check if it is a zip file and list contents
+if zipfile.is_zipfile(zip_path):
+    with zipfile.ZipFile(zip_path, 'r') as z:
+        print("Contents of the zipfile:", z.namelist())
+else:
+    print("The file is not a zip file.")

@@ -1,12 +1,6 @@
-huggingface_hub
-# pip install --upgrade huggingface_hub
-#huggingface_hub[cli,torch]
-# pip install 'huggingface_hub[cli,torch]'
-
 
 #torch==1.6 #         pip install https://download.pytorch.org/whl/cpu/torch-1.6.0%2Bcpu-cp36-cp36m-win_amd64.whl
 #torchvision==0.7.0 # pip install https://download.pytorch.org/whl/cpu/torchvision-0.7.0%2Bcpu-cp36-cp36m-win_amd64.whl
-timm==0.6.7
-
-
-# pytoch_lightning ??
+#timm==0.6.12 --no-dependencies
+#transformers[torch]==3.5.1
+#pytoch_lightning==1.5.3

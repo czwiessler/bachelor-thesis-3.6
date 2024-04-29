@@ -8,12 +8,15 @@ import os
 import src.model as model
 from src.data_preprocessing import get_input_format
 
-model_name = 'coat_tiny'
+model_name = 'timm/davit_base.msft_in1k'
 
 # choose from the following models:
 # coat_tiny
 # swin_base_patch4_window12_384
 # coatnet_0_rw_224
+# coatnet_rmlp_3_rw_224
+# maxvit_base_224
+# timm/davit_base.msft_in1k
 
 class CustomModel(LightningModule):
     def __init__(self, model_name, num_classes=8, checkpoint_path=None, image_size=224):

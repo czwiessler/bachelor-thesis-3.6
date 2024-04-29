@@ -10,7 +10,6 @@ def init_model(model_name, num_classes):
         num_features = model.head.in_features
         model.head.fc = torch.nn.Linear(num_features, num_classes)
 
-
     elif model_name == 'coatnet_rmlp_3_rw_224':
         model = timm.create_model(model_name, pretrained=True)
         num_features = model.head.fc.in_features
@@ -31,6 +30,11 @@ def init_model(model_name, num_classes):
 
     elif model_name == 'maxvit_base_224':
         model = timm.create_model(model_name, pretrained=True)
+        num_features = model.head.fc.in_features
+        model.head.fc = torch.nn.Linear(num_features, num_classes)
+
+    elif model_name == 'timm/davit_base.msft_in1k':
+        model = timm.create_model(model_name, pretrained=False)
         num_features = model.head.fc.in_features
         model.head.fc = torch.nn.Linear(num_features, num_classes)
 

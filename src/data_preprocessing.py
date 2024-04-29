@@ -106,6 +106,14 @@ def get_input_format(data_path):
     ratio = width / height
     return first_image.size, ratio
 
+from torch.utils.data import Subset
+def reduce_dataset_size(dataset, reduction_factor=0.1):
+    # Berechnen der neuen Größe des reduzierten Datensatzes
+    reduced_size = int(len(dataset) * reduction_factor)
+    # Erstellen eines neuen Datensatzes, der eine zufällige Untergruppe des ursprünglichen Datensatzes ist
+    indices = torch.randperm(len(dataset))[:reduced_size]
+    reduced_dataset = Subset(dataset, indices)
+    return reduced_dataset
 
 def create_data_loader(model_name):
     data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'custom_data', 'train')
@@ -176,6 +184,8 @@ def create_data_loader(model_name):
     # Split the dataset
     train_dataset, val_dataset = random_split(dataset, [train_size, val_size],
                                               generator=torch.Generator().manual_seed(42))
+    #train_dataset = reduce_dataset_size(train_dataset, reduction_factor=0.01)
+    #val_dataset = reduce_dataset_size(val_dataset, reduction_factor=0.01)
 
     # Step 2: Setup DataLoader
     """

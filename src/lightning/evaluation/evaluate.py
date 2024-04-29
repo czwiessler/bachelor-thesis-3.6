@@ -111,7 +111,10 @@ def print_prediction(image_name, is_correct, class_name, top_k_ids, top_k_probs,
     top_k_text = ", ".join(f"{id} ({prob:.2f}%)" for id, prob in zip(top_k_ids, top_k_probs))
     print("| {:<40} | {:<15} | {:<10} | {:<40} | {:<15f} |".format(image_name, result_text, class_name, top_k_text, prediction_time))
 
-
+def print_class_accuracy(class_accuracy):
+    print("\nAccuracy per class:")
+    for class_name, accuracy in class_accuracy.items():
+        print(f"{class_name}: {accuracy:.2f}%")
 
 def main(model_name):
     with open('../model_architectures/model_configs.json', 'r') as config_file:
@@ -126,6 +129,8 @@ def main(model_name):
     image_folder_path = '../../../custom_data/test'
     header = print_header()
     count = correct_count = total_time = total_top1_confidence = 0
+    class_correct = {}
+    class_total = {}
 
     for class_folder in os.listdir(image_folder_path):
         folder_path = os.path.join(image_folder_path, class_folder)
@@ -140,6 +145,12 @@ def main(model_name):
             count += 1
             correct_count += is_correct
             total_top1_confidence += top_k_probs[0]
+            if class_folder not in class_correct:
+                class_correct[class_folder] = 0
+            if class_folder not in class_total:
+                class_total[class_folder] = 0
+            class_correct[class_folder] += is_correct
+            class_total[class_folder] += 1
 
     average_time = total_time / count if count else 0
     average_top1_confidence = total_top1_confidence / count if count else 0
@@ -147,6 +158,9 @@ def main(model_name):
     print(f"Average prediction time per image: {average_time:.5f} seconds")
     print(f"Average Top-1 confidence: {average_top1_confidence:.2f}%")
     print(f"Accuracy: {correct_count}/{count} correct ({correct_count / count * 100:.2f}%)")
+    class_accuracy = {class_name: (class_correct[class_name] / class_total[class_name] * 100) for class_name in
+                      class_correct}
+    print_class_accuracy(class_accuracy)
 
 if __name__ == "__main__":
     main(model_name=model_name)
